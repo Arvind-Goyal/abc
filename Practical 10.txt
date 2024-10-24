@@ -1,0 +1,153 @@
+declare                // 1
+n1 number;
+n2 number;
+n3 number;
+begin
+n1:=5;
+n2:=3;
+n3:=n1+n2;
+DBMS_OUTPUT.PUT_LINE('Sum is ' || n3);
+end;
+/
+Sum is 8
+
+
+
+declare               //2
+l number;
+w number;
+a number;
+begin
+l:=&l;
+w:=&w;
+a:=l*w;
+dbms_output.put_line('Area of Rectangle is ' || a);
+end;
+/
+
+Enter value for l: 5
+old 6: l:=&l;
+new 6: l:=5;
+Enter value for w: 2
+old 7: w:=&w;
+new 7: w:=2;
+Area of Rectangle is 10
+
+
+declare
+Base number;
+Height Number;
+Area number;
+begin
+Base:=&Base;
+Height:=&Height;
+Area:=(Height*Base)/2;
+dbms_output.put_line('Area of Triangle is ' || Area);
+end;
+/
+
+Enter value for base: 5
+old 6: Base:=&Base;
+new 6: Base:=5;
+Enter value for height: 2
+old 7: Height:=&Height;
+new 7: Height:=2;
+Area of Triangle is 5
+
+
+declare
+Side number;
+Area Number;
+begin
+Side:=&Side;
+Area:=Side*Side;
+dbms_output.put_line('Area of Square is ' || Area);
+end;
+/
+Enter value for side: 5
+old 5: Side:=&Side;
+new 5: Side:=5;
+Area of Square is 25
+
+
+
+declare               //3
+a number;
+b number;
+c number;
+begin
+a:=&a;
+b:=&b;
+c:=&c;
+if a>b and a>c then
+dbms_output.put_line(a || ' is Greatest.');
+elsif b>a and b>c then
+dbms_output.put_line(b || ' is Greatest.');
+else
+dbms_output.put_line(c || ' is Greatest.');
+end if;
+end;
+/
+
+Enter value for a: 5
+old 6: a:=&a;
+new 6: a:=5;
+Enter value for b: 12
+old 7: b:=&b;
+new 7: b:=12;
+Enter value for c: 9
+old 8: c:=&c; 
+new 8: c:=9;
+12 is Greatest.
+
+
+
+declare                 //4
+n number;
+i number;
+s number;
+begin
+s:=0;
+n:=&n;
+for i in 1..n loop
+s:=s+i;
+end loop;
+dbms_output.put_line('Sum is ' || s);
+end;
+/
+
+Enter value for n: 10
+old 7: n:=&n;
+new 7: n:=10;
+Sum is 55
+
+
+
+declare           //5
+first number := 0;
+second number := 1;
+temp number;
+n number;
+i number;
+begin
+n:=&n;
+dbms_output.put_line(first);
+dbms_output.put_line(second);
+for i in 2..n loop
+temp:=first+second;
+first := second;
+second := temp;
+dbms_output.put_line(temp);
+end loop;
+end;
+/
+
+Enter value for n: 5
+old 8: n:=&n;
+new 8: n:=5;
+0
+1
+1
+2
+3
+5
